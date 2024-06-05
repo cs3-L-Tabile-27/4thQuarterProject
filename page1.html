@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="description" content="website">
+	<meta name="keywords" content="HTML, JavaScript">
+	<meta name="author" content="Lesli Gabrielle G. Tabile">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reddit+Sans+Condensed|Manrope|Poppins|LXGW+WenKai+TC">
+
+    <link rel="icon" 
+        href="https://i.pinimg.com/736x/a8/d1/47/a8d147eb4bd23d513bd096efe9f55dd1.jpg" 
+        type="image/x-icon">
+    <title>Flora: Plant Biology</title>
+</head>
+<!--this is the preview and sign up website page-->
+<style>
+    body {
+        background-image: url('https://www.icegif.com/wp-content/uploads/2022/06/icegif-961.gif');
+        background-size: cover;
+        height: 100px;
+        padding: 0px;
+        margin:0px;
+    }
+    #flora {
+        font-family: "Poppins";
+        font-size: 50px;
+        color: #02321b;
+        margin: 0px;
+    }
+    #shortDesc {
+        font-family: "Manrope";
+        color: #054a29;
+        font-size: 15px;
+        margin: 0.1px;
+    }
+    a {
+        text-decoration: none;
+        color:#bf3513;
+    }
+    nav {
+        width: 101.1%;
+        margin: -8px;
+		height: 150px;
+		background-color: #abe188;
+    }
+    ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-51%, -350%);
+        list-style-type: none;
+        margin: 8px;
+        padding: 0;
+        display: flex;
+        background: #8add53;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0px 0px 0px 5px #ace388;
+        float: center;
+    }
+    li {
+        font-family: "Manrope";
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 3px;
+        margin-left: 3px;
+    }
+    ul li {
+        list-style: none;
+        width: 189px;
+    }
+    ul li.active {
+        background: aliceblue;
+    }
+    ul li a {
+        display: block;
+        padding: 11px;
+        text-align: center;
+        color: #fff;
+        transition: 0.5s;
+    }
+    ul li.active a {
+        color: rgb(13, 97, 13);
+    }
+    #welcome1 {
+        font-family: "Manrope";
+        color: white;
+        font-size: 65px;
+        padding: 69px 0px 10px 55px;
+        font-weight: bold;
+        text-shadow: 3px 3px 3px #5d675b;
+        float: left;
+    }
+    #welcome2 {
+        font-family: "Manrope";
+        color: white;
+        font-size: 24px;
+        font-weight:lighter;
+        text-shadow: 3px 3px 3px #5d675b;
+        clear:both;
+        float: left;
+        padding: 0px 0px 0px 66px;
+    }
+    .container {
+        box-sizing: border-box;
+        font-family: "Poppins";
+        color: black;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90hv;
+        max-width: 605px;
+        padding: -5px 0px 19px;
+        margin: 0px, 30px;
+        background-color: white;
+        opacity: 0.9;
+        margin-top:36px;
+        margin-left: auto;
+        margin-right: 0;
+        width: fit-content;
+    }
+    h1 {
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        color: #bf3513;
+        padding-bottom: 10px;
+        border-bottom: 1px solid silver;
+    }
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 0px;
+    }
+    .input-box {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        padding-bottom: 15px;
+    }
+    .input-box:nth-child(2n){
+        justify-content: end;
+    }
+    .input-box label, .gender-title {
+        width: 95%;
+        color: #054a29;
+        font-weight: bold;
+        margin: 5px 0px;
+    }
+    .gender-title {
+        font-size: 15px;
+    }
+    .input-box input {
+        height: 40px;
+        width: 95%;
+        padding: 0, 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        outline: none;
+    }
+    .input-box input:single-button {
+        box-shadow: 0 3px 6px black;
+    }
+    .gender-category{
+        color: gray;
+    }
+    .gender-category label {
+        padding: 0 20px 0 5px;
+        font-size: 15px;
+    }
+    .gender-category label, gender-category input {
+        cursor: pointer;
+    }
+    .alert p {
+        font-size: 14px;
+        font-style: italic;
+        color: dimgray;
+        margin: 5px 0;
+        padding: 8px;
+    }
+    .button-container {
+        margin: 8px 0;
+    }
+    .button-container button {
+        width: 47%;
+        margin-top: 8px;
+        padding: 8px;
+        display: inline-block, flex;
+        font-size: 16px;
+        color: #054a29;
+        border-radius: 5px;
+        border-color: aliceblue;
+        background-image: linear-gradient(to right, white, #bfbfbf);
+    }   
+    @media(max-width:600px) {
+        .container{
+            min-width: 380px;
+        }
+        .content{
+            max-height: 380px;
+            overflow:auto;
+        }
+        .input-box{
+            margin-bottom: 12px;
+            width: 100%;
+        }
+        form {
+            size-adjust: 100px;
+            
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <center>
+        <p id="flora">𖥧𖤣 Flora 𖤣𖥧</p>
+        <i id="shortDesc">
+            -------------------------------------------------------------------------------------
+            An Informative Site for Plant Biology!
+            -------------------------------------------------------------------------------------
+        </i>
+        <div>
+            <ul>
+                <li class="active"><a href="./page1.html">SIGN UP</a></li>
+                <li><a href="./page2.html">HOMEPAGE</a></li>
+                <li><a href="./page3.html">PLANT STRUCTURE</a></li>
+                <li><a href="./page4.html">PLANT FUNCTION</a></li>
+                <li><a href="./page5.html">PLANT EVOLUTION</a></li>
+            </ul>
+        </div> 
+    </nav>
+    <div>
+        <i id="welcome1">Welcome to Flora! ⸙</i>
+        <p id="welcome2">Sign Up to Flora to get a better learning experience</p> 
+        <p id="welcome2">from this site.</p>
+    </div>
+    <div class="container">
+        <form action="#" method="post" id="signUp" onsubmit="submitForm(); return false;" onsubmit="localForm(event)" autocomplete="on">   
+            <fieldset> 
+            <h1>Sign Up</h1>
+            <div class="content">
+                <div class="input-box">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" placeholder="Enter full name" name="name" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                </div>
+                <div class="input-box">
+                    <label for="username">Username</label><br>
+                    <input type="text" id="username" placeholder="Enter username" name="username" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" placeholder="Enter a valid email address" name="email" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                    <span id="emailError"></span>
+                </div>
+                <div class="input-box">
+                    <label for="phonenumber">Phone Number</label><br>
+                    <input type="tel" id="number" placeholder="Enter phone number" name="phoneNumber" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                </div>
+                <div class="input-box">
+                    <label for="name">Password</label><br>
+                    <input type="password" id="password" placeholder="Enter new password" name="password" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                    <span id="pwError"></span>
+                </div>
+                <div class="input-box">
+                    <label for="cpassword">Confirm Password</label><br>
+                    <input type="password" id="cpassword" placeholder="Confirm password" name="confirmPw" required onblur="blurInput(this)" onfocus="focusInput(this)"><br>
+                    <span id="cpwError"></span>
+                </div>
+                <div class="gender-title">
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="gender" id="female" name="gender" value="Female" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                    <label for="female">Female</label>
+                    <input type="radio" id="gender" id="male" name="gender" value="Male" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                    <label for="male">Male</label>
+                    <input type="radio" id="gender" id="other" name="gender" value="Other" required onblur="blurInput(this)" onfocus="focusInput(this)">
+                    <label for="other">Other</label>
+                </div>
+                <div class="alert">
+                    <p>By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a>, 
+                    and <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt at any time.</p>
+                </div>
+            </div>
+                <div class="button-container">
+                    <button type="submit">Sign Up!</button>
+                    <button type="button" onclick="resetForm()">Reset</button></div>
+            </fieldset>
+        </form>
+    </div>
+  
+<script>
+    function submitForm() {
+        var namet = document.getElementById("name").value;
+        var usert = document.getElementById("username").value;
+        var emailt = document.getElementById("email").value;
+        var numbert = document.getElementById("number").value;
+        var passt = document.getElementById("password").value;
+        var cpasst = document.getElementById("cpassword").value;
+        var gendert = document.getElementById("gender").value;
+
+        var passE = document.getElementById("pwError");
+        var cpassE = document.getElementById("cpwError");
+        var emailE = document.getElementById("emailError");
+
+        var valid = true;
+
+        if (cpasst !== passt) {
+            cpassE.textContent = "(Passwords do not match. Please try again.)";
+            valid = false;
+        } else {
+            cpassE.textContent = "";
+        }
+    }
+    function resetForm() {
+        document.getElementById("signUp").reset();
+        document.getElementById("pwError").innerHTML = "";
+        document.getElementById("cpwError").innerHTML = "";
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("output").innerHTML = "";
+    }
+    function blurInput(input) {
+        if (input.value === "") {
+        input.style.borderColor = "#FD3838";
+        } else {
+        input.style.borderColor = "#0DD020"; 
+        }
+    }
+    function focusInput(input) {
+		input.style.borderColor = "#808080";
+    }
+
+</script>
+</body>
+</html>
